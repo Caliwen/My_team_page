@@ -1,0 +1,189 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=PT+Serif:wght@400;700&family=Poppins:wght@400;600&display=swap');
+
+*
+{
+    margin: 0px;
+    padding: 0px;
+}
+
+.container
+{
+    display: grid;
+    grid-template-columns: 1fr 300px 300px 300px 1fr; 
+    grid-template-rows: 30% 60% 60% 10%;
+    grid-template-areas: 
+    ". big_title header header ."
+    ". member1 member2 member3 ."
+    ". member4 member5 member6 ."
+    ". footer footer footer .";
+}
+
+.big_title
+{
+    grid-area: big_title;
+    padding-top: 80px;
+
+    font-family: 'PT Serif', serif;
+    font-size: 36px;
+    font-weight: 700;
+    letter-spacing: -0.045em;
+
+}
+
+.little_title
+{
+    grid-area: header;
+    padding-top: 80px;
+    padding-left: 30%;
+
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 27px;
+    letter-spacing: 0em;
+
+}
+
+.paragraph
+{
+    grid-area: header;
+    padding-top: 110px;
+    padding-left: 30%;
+
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 27px;
+    letter-spacing: 0em;
+}
+
+.member1, .member3, .member4, .member6
+{
+    display: grid; 
+    grid-template-columns: 70% 40%; 
+    grid-template-rows: 60% 10%;
+    grid-template-areas: 
+      "img job"
+      "name .";
+}
+
+.member2, .member5
+{
+    display: grid; 
+    grid-template-columns: 70% 40%; 
+    grid-template-rows: 30% 60% 10%;
+    grid-template-areas: 
+      " . ."
+      "img job"
+      "name .";
+}
+
+.member1{grid-area: member1;}
+.member2{grid-area: member2;}
+.member3{grid-area: member3;}
+.member4{grid-area: member4;}
+.member5{grid-area: member5;}
+.member6{grid-area: member6;}
+
+footer
+{
+    grid-area: footer;
+    align-self: end;
+    justify-self: center;
+    padding-bottom: 20px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    color: #A9A9A9;
+
+}
+
+.bold_underline
+{
+    font-weight: 700;
+    text-decoration: underline;
+}
+
+img
+{
+    width: 240px;
+    height: auto;
+    grid-area: img;
+}
+
+.name
+{
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 27px;
+    letter-spacing: 0em;
+    grid-area: name;
+}
+
+.job
+{
+    transform: rotate(90deg);
+    font-family: 'PT Serif', serif;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16px;
+    letter-spacing: 0em;
+    grid-area: job;
+    height: 0;
+    margin-top: 60px;
+}
+
+@media screen and (max-width: 640px){
+
+    .container
+    {
+        display: grid;
+        grid-template-columns: 1fr 200px 200px 1fr;
+        grid-template-rows: 10% 25% 30% 30% 30% 10%;
+        grid-template-areas: 
+            ". big_title big_title ."
+            ". header header ."
+            ". member1 member2 ."
+            ". member3 member4 ."
+            ". member5 member6 ."
+            ". footer footer .";
+    }
+
+    .member1, .member3, .member5
+    {
+        display: grid; 
+        grid-template-columns: 100px 120px; 
+        grid-template-rows: 65% 40%;
+        grid-template-areas: 
+          "img job"
+          "name .";
+    }
+
+    .member2, .member4, .member6
+    {
+        display: grid; 
+        grid-template-columns: 100px 120px; 
+        grid-template-rows: 30% 65% 40%;
+        grid-template-areas: 
+          " . ."
+          "img job"
+          "name .";
+    }
+
+    img
+    {
+        height: 200px;
+        width: auto;
+    }
+
+    .little_title, .paragraph
+    {
+        padding-left: 0px;
+    }
+
+    .name
+    {
+        font-size: 14px;
+    }
+}
